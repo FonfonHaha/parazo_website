@@ -1,0 +1,463 @@
+/*
+
+Voici le CSS.
+Pour aller au CSS desktop, ctrl + f --> tapez "CSS desktop"
+Pour aller au CSS mobile, ctrl + f --> tapez "CSS mobile"
+
+*/
+
+/*
+    | CSS base
+*/
+
+:root {
+  --color-1: #630279;  /* Violet foncé */
+  --color-2: #ff0c75;  /* Rose vif */
+  --color-3: #fd6f00;  /* Orange intense */
+  --color-4: #ffa104;  /* Orange clair */
+  --color-5: #fffc6a;  /* Jaune pastel */
+  --color-6: #0093fe;  /* Bleu vif */
+  --color-text: #271a30;  /* Violet très foncé */
+}
+
+* {
+    transform-style: preserve-3d;
+    font-family: Sen, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    font-family: Sen, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;
+    background-color: var(--color-1);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--color-5);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p, a, form, input {
+    font-size: 1.5rem;
+}
+
+a {
+    font-weight: bold;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 3000px;
+}
+
+section, article {
+    border-radius: 50px;
+}
+
+/*
+    | FIN CSS base
+*/
+
+
+/* CSS desktop */
+.menu_hamburger {
+    display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    background-color: #fffc6a;
+    border-bottom: 5px solid #271a30;
+    justify-content: space-between;;
+}
+
+.logo_mobile {
+    display: none;
+}
+
+.logo_desktop {
+    display: inline-block;
+    height: 10em;
+}
+
+nav {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav div {
+    width: 25%;
+    text-align: center;
+}
+
+nav div a {
+    transition: font-size 0.3s ease;
+}
+
+nav div a:hover {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 2em;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+
+section {
+    padding: 3em;
+    background-color: #fffc6a;
+    border: 5px solid #271a30;
+}
+
+.pres_missions {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+}
+
+.pres_missions section {
+    width: 50%;
+}
+
+.missions {
+    background-color: var(--color-1);
+    border: none;
+}
+
+.cases_missions {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.cases_missions .card {
+    background-color: var(--color-5);
+    color: var(--color-text);
+    background-image: linear-gradient(45deg, var(--color-2), var(--color-5));
+}
+
+.cases_missions .card-btn {
+    background-image: linear-gradient(45deg, var(--color-6), var(--color-5));
+    color: var(--color-text);
+}
+
+.missions h2 {
+    font-size: 4rem;
+    margin-bottom: 10rem;
+    color: var(--color-5);
+}
+
+.projets {
+    background-color: var(--color-5);
+    padding: 0 3rem 0 3rem;
+}
+
+.projets h2{
+    color: var(--color-text);
+    font-size: 4rem;
+    margin-bottom: 8rem;
+    text-align: center;
+}
+
+.cases_projets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 3rem;
+    height: auto;
+}
+
+.form_socials {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+}
+
+.formulaire {
+    width: 75%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    transform: translateZ(100px);
+}
+
+input, textarea {
+    border: 3px solid var(--color-text);
+    border-radius: 5px;
+    padding: 2em;
+}
+
+#paragraph {
+    width: 75%;
+}
+
+input[type="submit"] {
+    background-color: var(--color-2);
+    color: var(--color-5);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-1);
+}
+
+.cases_socials a {
+    transform: translateZ(100px);
+}
+
+/* CSS CARDS */
+.card {
+    width: 23%;
+    min-width: 250px;
+    box-shadow: 0 0 2px rgba(55, 55, 55, 0.5), 0 0 10px rgb(0, 0, 0, 0.5);
+    transform: translateZ(100px);
+    overflow: hidden;
+    background-color: var(--color-1);
+    color: var(--color-5);
+    border-radius: 20px;
+    transition: all .2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover {
+    box-shadow: 0 0 8px rgba(55, 55, 55, 0.5), 0 0 20px rgb(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    transform: translateZ(110px);
+}
+
+.card-img {
+    background-color: white;
+    width: 100%;
+}
+
+.card-img img {
+    width: 100%;
+}
+
+.card-body {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-btn {
+    align-self: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    background-image: linear-gradient(45deg, var(--color-2), var(--color-6));
+    background-size: 200% 200%;
+    background-position: 0;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    width: 50%;
+    transition: background-position .8s ease-out, box-shadow 0.1s ease;
+}
+
+.card-btn:hover {
+    background-position: 100% 0;
+    box-shadow: 0 0 5px var(--color-text);
+}
+
+
+
+
+/*CSS mobile */
+@media screen and (max-width: 985px) {
+
+    body {
+        perspective: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .menu_hamburger {
+        display: block;
+        width: 3em;
+        position: fixed;
+        right: 2em;
+        top: 2em;
+        background-color: var(--color-5);
+        aspect-ratio: 1/1;
+        border-color: transparent;
+        border-radius: 0.2em;
+    }
+
+    .element_hidden {
+        display: none;
+    }
+
+    nav {
+        width: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #fffc6a;
+        border-left: 5px solid #271a30;
+        border-bottom: 5px solid #271a30;
+        border-radius: 0px 0px 0px 10px;
+        padding: 2em;
+        padding-top: 8em;
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav div {
+        width: auto;
+    }
+
+    nav div a:hover {
+        font-size: 1.4rem;
+    }
+
+    .icon_menu_hamburger {
+        vertical-align: middle;
+    }
+
+    .logo_mobile {
+        display: inline-block !important;
+        width: 50%;
+    }
+
+    .logo_desktop {
+        display: none;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        gap: 1em;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    section, article {
+        border-radius: 20px;
+    }
+
+    section {
+        padding: 1em;
+        background-color: #fffc6a;
+        border: 5px solid #271a30;
+        width: 100%;
+    }
+
+    .pres_missions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .pres_missions section {
+        width: 100%;
+    }
+
+    .cases_missions {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+
+    .projets {
+        padding: 1em;
+    }
+    
+    .cases_projets {
+        gap: 1em;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form_socials {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        width: 100%;
+    }
+
+    .formulaire {
+        width: 100%;
+    }
+
+    .form {
+        gap: 1em;
+    }
+
+    input, textarea {
+        padding: 1em;
+    }
+    
+    .cases_socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .cases_socials a article img {
+        width: 4em;
+    }
+
+    /*CSS CARDS*/
+    .card {
+        width: 100%;
+        min-width: 0;
+        box-shadow: 0 0 1px rgba(55, 55, 55, 0.5), 0 0 8px rgb(0, 0, 0, 0.5);
+    }
+}
+
