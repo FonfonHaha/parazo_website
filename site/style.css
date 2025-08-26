@@ -139,13 +139,13 @@ section {
 
 .pres_missions {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 30px;
     width: 100%;
 }
 
 .pres_missions section {
-    width: 50%;
+    width: 100%;
 }
 
 .missions {
@@ -154,9 +154,8 @@ section {
 }
 
 .cases_missions {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 2em;
 }
 
@@ -179,13 +178,13 @@ section {
 
 .projets {
     background-color: var(--color-5);
-    padding: 0 3rem 0 3rem;
+    padding: 0 3rem 4rem 3rem;
 }
 
 .projets h2{
     color: var(--color-text);
     font-size: 4rem;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
     text-align: center;
 }
 
@@ -208,6 +207,7 @@ section {
 
 .formulaire {
     width: 75%;
+    padding-bottom: 7rem;
 }
 
 .form {
@@ -228,20 +228,17 @@ input, textarea {
 }
 
 input[type="submit"] {
-    background-color: var(--color-2);
+    background-image: linear-gradient(45deg, var(--color-3), var(--color-2));
     color: var(--color-5);
     cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: var(--color-1);
 }
 
 .cases_socials a {
     transform: translateZ(100px);
 }
+
+/* CSS ICON SOCIAL */
 
 /* CSS CARDS */
 .card {
@@ -250,7 +247,11 @@ input[type="submit"]:hover {
     box-shadow: 0 0 2px rgba(55, 55, 55, 0.5), 0 0 10px rgb(0, 0, 0, 0.5);
     transform: translateZ(100px);
     overflow: hidden;
-    background-color: var(--color-1);
+    background: radial-gradient(circle at bottom right, var(--color-1), transparent 70%),
+            radial-gradient(circle at bottom left, var(--color-6), transparent 70%),
+            radial-gradient(circle at top center, var(--color-text), transparent 70%);
+    background-position: 0;
+    background-size: 200% 200%;
     color: var(--color-5);
     border-radius: 20px;
     transition: all .2s ease;
@@ -261,6 +262,7 @@ input[type="submit"]:hover {
 
 .card:hover {
     box-shadow: 0 0 8px rgba(55, 55, 55, 0.5), 0 0 20px rgb(0, 0, 0, 0.5);
+    background-position: 100%;
     transform: translateY(-2px);
     transform: translateZ(110px);
 }
@@ -282,11 +284,13 @@ input[type="submit"]:hover {
     justify-content: space-between;
 }
 
-.card-btn {
+/* CSS BUTTON */
+
+.btn {
     align-self: center;
     padding: 1.5rem;
     font-size: 1.5rem;
-    background-image: linear-gradient(45deg, var(--color-2), var(--color-6));
+    background-image: linear-gradient(45deg, var(--color-3), var(--color-5));
     background-size: 200% 200%;
     background-position: 0;
     border: 0;
@@ -296,13 +300,10 @@ input[type="submit"]:hover {
     transition: background-position .8s ease-out, box-shadow 0.1s ease;
 }
 
-.card-btn:hover {
+.btn:hover {
     background-position: 100% 0;
     box-shadow: 0 0 5px var(--color-text);
 }
-
-
-
 
 /*CSS mobile */
 @media screen and (max-width: 985px) {
