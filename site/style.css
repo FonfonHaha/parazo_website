@@ -118,6 +118,12 @@ nav div a:hover {
     font-size: 2rem;
 }
 
+.current-page {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 h1 {
     font-size: 4rem;
 }
@@ -208,6 +214,7 @@ section {
 .formulaire {
     width: 75%;
     padding-bottom: 7rem;
+    padding-left: 4rem;
 }
 
 .form {
