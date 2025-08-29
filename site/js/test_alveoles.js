@@ -30,7 +30,7 @@ document.addEventListener('mousemove', e => {
 
     // influence max à 200px, min à 1
     const influence = Math.max(0, 1 - dist / 200);
-    const scale = 1 + influence * 0.4; // grossit jusqu’à 1.6x
+    const scale = 1 + influence * 0.3; // grossit jusqu’à 1.6x
 
     // au lieu d’agrandir la div elle-même (qui chevaucherait),
     // on la scale "en interne"
