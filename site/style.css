@@ -322,25 +322,22 @@ input[type="submit"] {
 .slider-container {
     position: relative;
     width: 100%;       /* Largeur fixe, tu peux la rendre responsive si besoin */
-    overflow: hidden;   /* Cache les images qui dépassent */
     margin: auto;
-}
-
-.slider-slides {
     display: flex;
-    transition: transform 0.5s ease;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .slider-slides img {
     width: 100%;
-    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 2rem;
 }
 
 .slider-btn {
     width: 10%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .slider-previous {
@@ -349,6 +346,17 @@ input[type="submit"] {
 
 .slider-next {
     right: 10px;
+}
+
+.slider-slide {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+}
+
+.slider-slide-visible {
+    transform: scale(1);
+    opacity: 1;
 }
 
 /*CSS mobile */

@@ -1,24 +1,23 @@
 const images = [
-    "img/projet-base/logo.svg",
-    "img/projet-base/logohorizontal.svg",
-    "img/projet-base/logoicon.svg"
+    "img/projet-base/1.png",
+    "img/projet-base/2.png",
+    "img/projet-base/3.png"
 ];
-const slides = document.querySelector('.slider-slides');
+const slide = document.querySelector('.slider-slide')
 const prev = document.querySelector('.slider-previous');
 const next = document.querySelector('.slider-next');
 
-images.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    slides.appendChild(img);
-});
-
 let index = 0;
+slide.src = images[0];
 const totalImages = images.length;
 
 function updateSlider() {
-    const width = slides.offsetWidth / totalImages;
-    slides.style.transform = `translateX(-${index * width}px)`;
+    slide.classList.remove('slider-slide-visible');
+    setTimeout(() => {
+        slide.src = images[index];
+        void slide.offsetWidth;
+        slide.classList.add('slider-slide-visible');
+    }, 200);
 }
 
 prev.addEventListener('click', () => {
