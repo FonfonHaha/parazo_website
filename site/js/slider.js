@@ -30,4 +30,8 @@ next.addEventListener('click', () => {
     updateSlider();
 });
 
-updateSlider();
+console.log(slide.src);
+
+// if (slide.src) {
+//     updateSlider();
+// };

@@ -334,6 +334,7 @@ input[type="submit"] {
     width: 100%;
     overflow: hidden;
     border-radius: 2rem;
+    box-shadow: 0 0 2 2 var(--color-text);
 }
 
 .slider-btn {
