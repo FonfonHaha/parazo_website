@@ -1,0 +1,77 @@
+body {
+    perspective: none;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-zoom {
+    transition: transform 0.5s ease;
+}
+.btn-zoom:hover {
+    transform: scale(1.1);
+}
+
+.btn-rotate {
+    transition: transform 1s ease-out;
+}
+.btn-rotate:hover {
+    transform: rotate(360deg);
+}
+
+.btn-translate {
+    transition: transform 0.5s ease-out;
+}
+.btn-translate:hover {
+    transform: translateX(8px);
+}
+
+.btn-skew {
+    transition: transform 0.5s ease;
+}
+.btn-skew:hover {
+    transform: skew(30deg);
+}
+
+.btn-shine {
+    position: relative;
+    width: 100px;
+    overflow: hidden;
+}
+
+.btn-shine > * {
+    position: absolute
+}
+
+.btn-shine:hover > .shine {
+    transform: translateY(-32px) translateX(64px);
+}
+
+.shine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transform: translateY(-32px) translateX(-56px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.shine-1 {
+    background-color: white;
+    width: 16px;
+    height: 100px;
+    transform: skew(20deg);
+}
+
+.shine-2 {
+    background-color: white;
+    width: 4px;
+    height: 100px;
+    transform: skew(20deg);
+}
