@@ -87,13 +87,25 @@ section, article {
     border-radius: 5px;
     color: white;
     width: auto;
-    transition: background-position .8s ease-out, box-shadow 0.1s ease;
+    transition: background-position .8s ease-out, box-shadow 0.1s ease, translate 0.2s ease;
     cursor: pointer;
 }
 
 .btn:hover {
     background-position: 100% 0;
     box-shadow: 0 0 5px var(--color-text);
+}
+
+.btn:active {
+    transform: translateY(3px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-6);
+  outline-offset: 4px;
+}
+.btn {
+  background-size: 200% 200%;
 }
 
 

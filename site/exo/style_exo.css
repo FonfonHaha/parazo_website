@@ -60,7 +60,7 @@ section {
     justify-content: center;
     gap: 4px;
     transform: translateY(-32px) translateX(-56px);
-    transition: transform 0.2s ease;
+    transition: transform 0.5s ease;
 }
 
 .shine-1 {
@@ -75,4 +75,94 @@ section {
     width: 4px;
     height: 100px;
     transform: skew(20deg);
+}
+
+.anim {
+    will-change: transform;
+    width: 70%;
+    aspect-ratio: 1/1;
+    background-color: coral;
+    border-radius: 20%;
+    border: solid 2px crimson;
+}
+
+.anim-bounce {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: bounce 2s ease 1s infinite normal none;
+}
+
+.anim-rotate {
+    animation: rotate 4s linear 1s infinite normal none;
+}
+
+.anim-rotate-reverse {
+    animation : rotate 2s linear 1s infinite reverse none;
+}
+
+.anim-rotate-special {
+    animation: rotate-special 2s ease-out 1s infinite normal none;
+}
+
+.anim-crazy {
+  animation: bounce 2s ease infinite;
+}
+
+.multiple-rotate {
+    will-change: transform;
+    aspect-ratio: 1/1;
+    width: 160px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+.multiple-rotate * {
+    justify-self: center;
+    align-self: center;
+}
+
+.anim-1 {
+    background-color: lavender;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.anim-2 {
+    background-color: lavender;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.anim-3 {
+    background-color: lavender;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.anim-4 {
+    background-color: lavender;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.anim-big {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+@keyframes bounce {
+    0%      { transform: translateX(0); }
+    50%     { transform: translateX(50px); }
+    100%    { transform: translateX(0); }
+}
+
+@keyframes rotate {
+    100%    { transform: rotate(360deg);}
+}
+
+@keyframes rotate-special {
+    0%      { transform: rotate(0); }
+    60%     { transform: rotate(360deg); }
+    90%     { transform: rotate(-15deg); }
+    95%     { transform: rotate(0); }
 }

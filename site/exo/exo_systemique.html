@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_exo_systemique.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exo systemique</title>
+</head>
+<body>
+    <section>
+
+        <!-- rebond simple -->
+        <div class="anim anim-bounce anim-normal ease-in-out anim-infinite"></div>
+
+        <!-- rotation continue -->
+        <div class="anim anim-rotate anim-slow ease-linear anim-infinite"></div>
+
+        <!-- rotation inversée -->
+        <div class="anim anim-rotate anim-fast ease-linear anim-infinite anim-reverse"></div>
+
+        <!-- rotation spéciale avec "contre-mouvement" -->
+        <div class="anim anim-rotate-special anim-normal ease-out anim-infinite"></div>
+
+        <!-- Cas complexe : plusieurs petites autour d’une grosse -->
+        <div class="multiple-rotate">
+
+            <div class="anim anim-rotate-special anim-1 anim-fast ease-out anim-infinite">1</div>
+            <div class="anim anim-rotate-special anim-2 anim-fast ease-out anim-infinite">2</div>
+            <div class="anim anim-rotate-special anim-3 anim-fast ease-out anim-infinite">3</div>
+            <div class="anim anim-rotate-special anim-4 anim-fast ease-out anim-infinite">4</div>
+
+            <div class="anim anim-rotate anim-big anim-slow ease-linear anim-infinite">BIG</div>
+        </div>
+
+    </section>
+</body>
+</html>
