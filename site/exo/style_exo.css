@@ -150,6 +150,44 @@ section {
     animation: bounce-far 0.5s cubic-bezier(1,-1.65,.38,1.94) 1s forwards;
 }
 
+.multiple-hover {
+    transition: transform 0.8s ease, background-color 0.8s ease, box-shadow 0.4s ease;
+}
+
+.multiple-hover:hover {
+    transform: scale(1.2, 1.2);
+    background-color: cornflowerblue;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.551);
+}
+
+.btn-multi {
+    transition: all 0.7s ease;
+}
+
+.btn-multi:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.btn-multi:active {
+    transform: scale(0.9, 0.9);
+}
+
+.btn-multi:focus {
+    background-image: none;
+    background-color: blueviolet;
+}
+
+.anim-scroll {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.5s ease;
+}
+
+.anim-scroll.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 @keyframes bounce {
     0%      { transform: translateX(0); }
     50%     { transform: translateX(50px); }
