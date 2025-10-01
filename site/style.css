@@ -7,35 +7,187 @@ Pour aller au CSS mobile, ctrl + f --> tapez "CSS mobile"
 */
 
 /*
-    | CSS base
+    | SYSTEMIC CSS DOC
+    ------------------
+
+    OBJECTIF :
+    Ce fichier définit un DESIGN SYSTEM stable basé sur la charte graphique.
+    On y trouve :
+    - Des variables globales (couleurs, radius, border, gap…)
+    - Des classes utilitaires fixes (couleurs, alignement, box-shadows…)
+    - Des règles globales (focus, base typographique)
+
+    PHILOSOPHIE :
+    - Les variables : servent aux styles constants, communs à tous les éléments 
+      (ex : radius des sections, border size des composants).
+    - Les classes utilitaires : servent à appliquer rapidement les variantes 
+      prévues par la charte (ex : choisir parmi 4 couleurs de fond prédéfinies).
+    - Pas de nouvelle couleur, pas de valeur inventée : tout vient de la charte.
+    - Accessibilité : focus visible et uniforme partout.
+
+    STRUCTURE :
+    1. VARIABLES
+       - Couleurs officielles de la charte
+       - Border-radius et border-size globaux
+       - Gaps standards
+    2. CLASSES UTILITAIRES
+       - Couleurs (texte, fond, gradients)
+       - Alignement (text-align, align-self)
+       - Ombres (box-shadow normal et hover)
+    3. BASE
+       - Font globale
+       - Règles typographiques par défaut
+       - Layout de base (body, section, etc.)
+    4. ETATS
+       - Focus (accessibilité)
+       - Hover sur backgrounds/ombres
+
+    NOTES :
+    - Couleurs : les numéros (1 à 5) viennent directement de la charte graphique.
+    - Gradients : seuls les dégradés 3 to 2, 2 to 4, 5 to 4, 1 to 5 to dark sont disponibles.
+    - Border-radius & border-size : uniquement en variables, 
+      car constants pour chaque type de composant.
+    - Box-shadow : disponible en version "par défaut" et "hover" 
+      pour gérer facilement les états interactifs (ex : bouton, carte).
+    - Text-align : left & center sont utilisés régulièrement, right est optionnel.
+
+    → Ce système est volontairement FIXE : pas prévu d’évolution
+      (les besoins sont couverts par la charte).
 */
 
+
+/*
+    | VARIABLES
+*/
 :root {
-  --color-1: #630279;  /* Violet foncé */
-  --color-2: #ff0c75;  /* Rose vif */
-  --color-3: #fd6f00;  /* Orange intense */
-  --color-4: #ffa104;  /* Orange clair */
-  --color-5: #fffc6a;  /* Jaune pastel */
-  --color-6: #0093fe;  /* Bleu vif */
-  --color-text: #271a30;  /* Violet très foncé */
+    /*couleurs*/
+    --color-1: #630279;  /* Violet foncé */
+    --color-2: #ff0c75;  /* Rose vif */
+    --color-3: #fd6f00;  /* Orange intense */
+    --color-4: #ffa104;  /* Orange clair */
+    --color-5: #0093fe;  /* Bleu vif */
+    --color-light: #fffc6a;  /* Jaune pastel */
+    --color-dark: #271a30;  /* Violet très foncé */
+
+    /*border-radius*/
+    --border-radius-l: 5rem;
+    --border-radius-m: 2rem;
+    --border-radius-s: 0.5rem;
+
+    /*border size*/
+    --border-size-l: 0.6rem;
+    --border-size-m: 0.4rem;
+    --border-size-s: 0.25rem;
+
+    /*gap*/
+    --gap-l: 4rem;
+    --gap-m: 2rem;
+    --gap-s: 1rem;
 }
 
+/* CLASSES COULEURS FONT */
+.font-color-1 {
+    color: var(--color-1);
+}
+.font-color-2 {
+    color: var(--color-2);
+}
+.font-color-3 {
+    color: var(--color-3);
+}
+.font-color-4 {
+    color: var(--color-4);
+}
+.font-color-5 {
+    color: var(--color-5);
+}
+.font-color-light{
+    color: var(--color-light);
+}
+.font-color-dark {
+    color: var(--color-dark);
+}
+.font-color-white {
+    color: white;
+}
+
+/* CLASSES COULEURS BACKGROUND */
+.background-color-1 {
+    background-color: var(--color-1) ;
+}
+.background-color-2 {
+    background-color: var(--color-2) ;
+}
+.background-color-3 {
+    background-color: var(--color-3) ;
+}
+.background-color-4 {
+    background-color: var(--color-4) ;
+}
+.background-color-5 {
+    background-color: var(--color-5) ;
+}
+.background-color-light {
+    background-color: var(--color-light) ;
+}
+.background-color-dark {
+    background-color: var(--color-dark) ;
+}
+.background-color-gradient-3to2 {
+    background-image: linear-gradient(45deg, var(--color-3), var(--color-2));
+}
+.background-color-gradient-2to4 {
+    background-image: linear-gradient(45deg, var(--color-2), var(--color-4));
+}
+.background-color-gradient-5to4 {
+    background-image: linear-gradient(45deg, var(--color-5), var(--color-4));
+}
+.background-color-gradient-1to5todark {
+    background: radial-gradient(circle at bottom right, var(--color-1), transparent 70%),
+                radial-gradient(circle at bottom left, var(--color-5), transparent 70%),
+                radial-gradient(circle at top center, var(--color-dark), transparent 70%);
+}
+.background-color-gradient-size-200 {
+    background-size: 200% 200%;
+    background-position: 0;
+}
+
+/* TEXT ALIGN */
+.text-align-left {
+    text-align: left;
+}
+.text-align-center {
+    text-align: center;
+}
+.text-align-right {
+    text-align: right;
+}
+
+/* ALIGN-SELF */
+.align-self-start {
+    align-self: flex-start;
+}
+.align-self-center {
+    align-self: center;
+}
+.align-self-end {
+    align-self: flex-end;
+}
+
+/* BASE */
+
 * {
-    transform-style: preserve-3d;
     font-family: Sen, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html {
-    font-family: Sen, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 10px;
+    font-size: 8px;
     background-color: var(--color-1);
-    color: var(--color-text);
+    color: var(--color-dark);
 }
 
 h1 {
     font-size: 2rem;
-    color: var(--color-5);
-    text-align: center;
 }
 
 h2 {
@@ -52,7 +204,6 @@ p, a, form, input {
 
 a {
     font-weight: bold;
-    color: var(--color-text);
     text-decoration: none;
 }
 
@@ -61,31 +212,60 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    perspective: 3000px;
 }
 
-section, article {
-    border-radius: 50px;
+section {
+    padding: 3rem;
+}
+
+.section-pos {
+    background-color: var(--color-light); /*section avec fond + border*/
+    border: var(--border-size-l) solid var(--color-dark);
+}
+
+/*HOVER ACTIVE FOCUS*/
+
+
+.background-color-gradient-hover:hover {
+    background-position: 100% 0;
+}
+
+.focus:focus-visible {
+    outline: var(--border-size-s) solid var(--color-5);
+    outline-offset: 0.5rem;
+}
+
+/*BOX SHADOW*/
+.box-shadow-l {
+    box-shadow: 0 0 1.5rem var(--color-dark);
+}
+.box-shadow-m {
+    box-shadow: 0 0 1rem var(--color-dark);
+}
+.box-shadow-s {
+    box-shadow: 0 0 0.5rem var(--color-dark);
+}
+.box-shadow-l-hover:hover {
+    box-shadow: 0 0 1.5rem var(--color-dark);
+}
+.box-shadow-m-hover:hover {
+    box-shadow: 0 0 1rem var(--color-dark);
+}
+.box-shadow-s-hover:hover {
+    box-shadow: 0 0 0.5rem var(--color-dark);
 }
 
 /*
     | FIN CSS base
 */
 
-/* CSS UXUI */
-
 /* CSS BUTTON */
 
 .btn {
-    align-self: center;
     padding: 1.5rem;
     font-size: 1.5rem;
-    background-image: linear-gradient(45deg, var(--color-3), var(--color-5));
-    background-size: 200% 200%;
-    background-position: 0;
     border: 0;
-    border-radius: 5px;
-    color: white;
+    border-radius: var(--border-radius-s);
     width: auto;
     transition: background-position .8s ease-out, box-shadow 0.1s ease, translate 0.2s ease;
     cursor: pointer;
