@@ -175,7 +175,6 @@ Pour aller au CSS mobile, ctrl + f --> tapez "CSS mobile"
 }
 
 /* BASE */
-
 * {
     font-family: Sen, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -212,10 +211,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--gap-l);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-l);
 }
 
 section {
+    width: 70%;
     padding: 3rem;
+    border-radius: var(--border-radius-l);
 }
 
 .section-pos {
@@ -223,8 +233,34 @@ section {
     border: var(--border-size-l) solid var(--color-dark);
 }
 
-/*HOVER ACTIVE FOCUS*/
+.invisible {
+    opacity: 0;
+}
 
+.visible {
+    opacity: 1;
+}
+
+/*HOVER ACTIVE FOCUS*/
+.anim-trans {
+    transition: background-position .8s ease-out,
+                box-shadow 0.3s ease,
+                translate 0.3s ease,
+                transform 0.7s ease,
+                background-color 0.3s ease;
+}
+
+.scale:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.scale-clic:active {
+    transform: scale(0.95, 0.95);
+}
+
+.color-clic:active {
+    background-color: #0093fe;
+}
 
 .background-color-gradient-hover:hover {
     background-position: 100% 0;
@@ -267,30 +303,12 @@ section {
     border: 0;
     border-radius: var(--border-radius-s);
     width: auto;
-    transition: background-position .8s ease-out, box-shadow 0.1s ease, translate 0.2s ease;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-position: 100% 0;
-    box-shadow: 0 0 5px var(--color-text);
-}
-
-.btn:active {
-    transform: translateY(3px);
-}
-
-.btn:focus-visible {
-  outline: 2px solid var(--color-6);
-  outline-offset: 4px;
-}
-.btn {
-  background-size: 200% 200%;
-}
-
-
-
 /* CSS desktop */
+
+/*NAV*/
 .menu_hamburger {
     display: none;
 }
@@ -300,8 +318,7 @@ header {
     flex-direction: row;
     height: auto;
     width: 100%;
-    background-color: #fffc6a;
-    border-bottom: 5px solid #271a30;
+    border-bottom: 5px solid var(--color-dark);
     justify-content: space-between;;
 }
 
@@ -327,12 +344,13 @@ nav div {
     text-align: center;
 }
 
-nav div a {
-    transition: font-size 0.3s ease;
+nav a {
+    color: var(--color-dark);
+    transition: transform 0.3s ease;
 }
 
-nav div a:hover {
-    font-size: 2rem;
+nav a:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .current-page {
@@ -340,26 +358,7 @@ nav div a:hover {
     font-weight: bold;
     text-decoration: underline;
 }
-
-h1 {
-    font-size: 4rem;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    gap: 2em;
-    transition: transform 0.1s ease-out;
-    transform-style: preserve-3d;
-}
-
-section {
-    padding: 3em;
-    background-color: #fffc6a;
-    border: 5px solid #271a30;
-    transform: translateZ(1rem); /* important, certains éléments ne sont pas clicables à cause de la 3D */
-}
+/*  FIN NAV */
 
 .pres_missions {
     display: flex;
