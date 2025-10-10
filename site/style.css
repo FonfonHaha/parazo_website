@@ -273,13 +273,13 @@ section {
 
 /*BOX SHADOW*/
 .box-shadow-l {
-    box-shadow: 0 0 1.5rem var(--color-dark);
+    box-shadow: 0 0 4rem var(--color-dark);
 }
 .box-shadow-m {
-    box-shadow: 0 0 1rem var(--color-dark);
+    box-shadow: 0 0 2rem var(--color-dark);
 }
 .box-shadow-s {
-    box-shadow: 0 0 0.5rem var(--color-dark);
+    box-shadow: 0 0 1rem var(--color-dark);
 }
 .box-shadow-l-hover:hover {
     box-shadow: 0 0 1.5rem var(--color-dark);
@@ -290,6 +290,36 @@ section {
 .box-shadow-s-hover:hover {
     box-shadow: 0 0 0.5rem var(--color-dark);
 }
+
+
+/* CSS CARDS */
+.card {
+    width: 23%;
+    min-width: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-img {
+    background-color: white;
+    width: 100%;
+}
+
+.card-img img {
+    width: 100%;
+}
+
+.card-body {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 /*
     | FIN CSS base
@@ -360,7 +390,7 @@ nav a:hover {
 }
 /*  FIN NAV */
 
-.pres_missions {
+.pres-missions {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -463,50 +493,6 @@ input[type="submit"] {
 }
 
 /* CSS ICON SOCIAL */
-
-/* CSS CARDS */
-.card {
-    width: 23%;
-    min-width: 250px;
-    box-shadow: 0 0 2px rgba(55, 55, 55, 0.5), 0 0 10px rgb(0, 0, 0, 0.5);
-    transform: translateZ(100px);
-    overflow: hidden;
-    background: radial-gradient(circle at bottom right, var(--color-1), transparent 70%),
-            radial-gradient(circle at bottom left, var(--color-6), transparent 70%),
-            radial-gradient(circle at top center, var(--color-text), transparent 70%);
-    background-position: 0;
-    background-size: 200% 200%;
-    color: var(--color-5);
-    border-radius: 20px;
-    transition: all .2s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.card:hover {
-    box-shadow: 0 0 8px rgba(55, 55, 55, 0.5), 0 0 20px rgb(0, 0, 0, 0.5);
-    background-position: 100%;
-    transform: translateY(-2px);
-    transform: translateZ(110px);
-}
-
-.card-img {
-    background-color: white;
-    width: 100%;
-}
-
-.card-img img {
-    width: 100%;
-}
-
-.card-body {
-    flex: 1;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 
 /* CSS SLIDER */
