@@ -133,14 +133,41 @@ Pour aller au CSS mobile, ctrl + f --> tapez "CSS mobile"
 .background-color-dark {
     background-color: var(--color-dark) ;
 }
+.background-color-gradient-1to2 {
+    background-image: linear-gradient(45deg, var(--color-1), var(--color-2));
+}
+.background-color-gradient-1to3 {
+    background-image: linear-gradient(45deg, var(--color-1), var(--color-3));
+}
+.background-color-gradient-1to4 {
+    background-image: linear-gradient(45deg, var(--color-1), var(--color-4));
+}
+.background-color-gradient-1to5 {
+    background-image: linear-gradient(45deg, var(--color-1), var(--color-5));
+}
 .background-color-gradient-3to2 {
     background-image: linear-gradient(45deg, var(--color-3), var(--color-2));
+}
+.background-color-gradient-3to4 {
+    background-image: linear-gradient(45deg, var(--color-3), var(--color-4));
 }
 .background-color-gradient-2to4 {
     background-image: linear-gradient(45deg, var(--color-2), var(--color-4));
 }
+.background-color-gradient-2tolight {
+    background-image: linear-gradient(45deg, var(--color-2), var(--color-light));
+}
+.background-color-gradient-4tolight {
+    background-image: linear-gradient(45deg, var(--color-4), var(--color-light));
+}
 .background-color-gradient-5to4 {
     background-image: linear-gradient(45deg, var(--color-5), var(--color-4));
+}
+.background-color-gradient-5tolight {
+    background-image: linear-gradient(45deg, var(--color-5), var(--color-light));
+}
+.background-color-gradient-lightto2 {
+    background-image: linear-gradient(45deg, var(--color-light), var(--color-2));
 }
 .background-color-gradient-1to5todark {
     background: radial-gradient(circle at bottom right, var(--color-1), transparent 70%),
@@ -186,19 +213,19 @@ html {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 5rem;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 3rem;
 }
 
 h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 p, a, form, input {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 a {
@@ -224,7 +251,7 @@ main {
 
 section {
     width: 70%;
-    padding: 3rem;
+    padding: 5rem;
     border-radius: var(--border-radius-l);
 }
 
@@ -294,8 +321,9 @@ section {
 
 /* CSS CARDS */
 .card {
+    box-sizing: border-box;
     width: 23%;
-    min-width: 250px;
+    min-width: 150px;
     overflow: hidden;
     border-radius: 20px;
     display: flex;
@@ -393,107 +421,87 @@ nav a:hover {
 .pres-missions {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--gap-l);
+}
+
+.pres-missions-cards {
     width: 100%;
-}
-
-.pres_missions section {
-    width: 100%;
-}
-
-.missions {
-    background-color: var(--color-1);
-    border: none;
-}
-
-.cases_missions {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-}
-
-.cases_missions .card {
-    background-color: var(--color-5);
-    color: var(--color-text);
-    background-image: linear-gradient(45deg, var(--color-2), var(--color-5));
-}
-
-.cases_missions .card-btn {
-    background-image: linear-gradient(45deg, var(--color-6), var(--color-5));
-    color: var(--color-text);
-}
-
-.missions h2 {
-    font-size: 4rem;
-    margin-bottom: 10rem;
-    color: var(--color-5);
-}
-
-.projets {
-    background-color: var(--color-5);
-    padding: 0 3rem 4rem 3rem;
-}
-
-.projets h2{
-    color: var(--color-text);
-    font-size: 4rem;
-    margin-bottom: 4rem;
-    text-align: center;
-}
-
-.cases_projets {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
-    gap: 3rem;
-    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--gap-l);
 }
 
-.form_socials {
+.pres-missions #card {
+    flex: 1 1 calc(25% - var(--gap-l));
+}
+
+/* CONTACTS */
+.contacts {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-l);
 }
 
-.formulaire {
+/* FORMULAIRE */
+
+.contact-form {
     width: 75%;
-    padding-bottom: 7rem;
-    padding-left: 4rem;
+    padding: var(--gap-l);
+    border-radius: var(--border-radius-m);
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    transform: translateZ(100px);
+    gap: var(--gap-m);
 }
 
-input, textarea {
-    border: 3px solid var(--color-text);
-    border-radius: 5px;
-    padding: 2em;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
 }
 
-#paragraph {
-    width: 75%;
+.focus-form {
+    padding: var(--gap-s);
+    border: none;
+    border-radius: var(--border-radius-s);
 }
 
-input[type="submit"] {
-    background-image: linear-gradient(45deg, var(--color-3), var(--color-2));
-    color: var(--color-5);
-    cursor: pointer;
-    font-weight: bold;
+.focus-form:focus {
+    outline: var(--border-size-s) solid var(--color-2);
+    background-color: #49324f; /* couleur exclusive au focus du formulaire, je trouvais que ça rendait mieux */
+    color: var(--color-light);
 }
 
-.cases_socials a {
-    transform: translateZ(100px);
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-form {
+    width: 25%;
 }
 
 /* CSS ICON SOCIAL */
 
+.contact-socials {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 /* CSS SLIDER */
 .slider-container {
@@ -637,6 +645,10 @@ input[type="submit"] {
 
     .pres_missions section {
         width: 100%;
+    }
+    
+    .pres-missions #card {
+        flex: 1 1 calc(50% - var(--gap-l));
     }
 
     .cases_missions {

@@ -15,9 +15,9 @@
         <img class="logo_desktop" src="img/texteonly.png" alt="logo de Parazo! horizontal">
         <nav class="nav_bar element_hidden" id="nav_bar">
             <a href="index.html" class="current-page">Accueil</a>
-            <a href="#">Missions</a>
-            <a href="#">Projets</a>
-            <a href="#">Contact</a>
+            <!-- <a href="#">Missions</a>
+            <a href="#">Projets</a> -->
+            <a href="#contacts">Contact</a>
         </nav>
         <button class="menu_hamburger" id="menu_hamburger">
             <img src="burger.svg" alt="icon burger menu" id="icon_menu_hamburger" class="icon_menu_hamburger">
@@ -25,58 +25,162 @@
         </button>
     </header>
     <main id="main">
-        <section class="section section-pos">
-            <h1>Site CV Parazo!</h1>
+        <section id="presentation" class="section background-color-gradient-1to5todark box-shadow-l anim-trans">
+            <div class="pres-content" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: var(--gap-l); flex-wrap: wrap;">
+                
+                <!-- Bloc texte -->
+                <div class="pres-text" style="flex: 1 1 45%; display: flex; flex-direction: column; gap: var(--gap-m);">
+                    <h2 class="font-color-light">Bienvenue sur <span class="font-color-2">Parazo!</span></h2>
+                    <p class="font-color-light" style="line-height: 1.6;">
+                        Je suis <strong class="font-color-4">graphiste et développeur web</strong>, passionné par la création d’identités visuelles et d’expériences numériques uniques.  
+                        J’allie design et code pour donner vie à des projets qui sortent du lot ✨
+                    </p>
+                    <div style="display: flex; gap: var(--gap-s); flex-wrap: wrap;">
+                        <a href="#missions" class="btn background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                            Voir mes services
+                        </a>
+                        <a href="#contacts" class="btn background-color-gradient-size-200 background-color-gradient-5tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bloc image ou visuel -->
+                <div class="pres-image" style="flex: 1 1 40%; display: flex; justify-content: center; align-items: center;">
+                    <img src="img/logo.png" alt="Illustration de Parazo" 
+                        style="width: 100%; max-width: 400px; border-radius: var(--border-radius-m); box-shadow: 0 0 3rem var(--color-dark);">
+                </div>
+
+            </div>
+        </section>
+        <h1 class="font-color-light">Graphiste & développeur web</h1>
+        <section id="presentation" class="section section-pos">
+            <h2>Site CV Parazo!</h2>
             <p>Salut, bienvenue sur mon site, j'espère que ça vous plaira lol.</p>
             <button class="btn background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
                 Contact
             </button>
         </section>
-        <div class="pres-missions">
-            <h1>Les missions proposées</h1>
-            <section class="section">
-                <article class="card background-color-gradient-5to4 background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+        <section id="missions" class="section pres-missions">
+            <h2 class="font-color-light">Les missions proposées</h2>
+            <div class="pres-missions-cards">
+                <article id="card" class="card background-color-gradient-2tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
                     <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
                     <div class="card-body font-color-dark">
                         <h2>titre</h2>
                         <p>Bonjour ça va</p>
-                        <button class="btn background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-5tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
                             Voir
                         </button>
                     </div>
                 </article>
-                <article class="card background-color-gradient-5to4 background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                <article id="card" class="card background-color-gradient-2tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
                     <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
                     <div class="card-body font-color-dark">
                         <h2>titre</h2>
                         <p>Bonjour ça va</p>
-                        <button class="btn background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-5tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
                             Voir
                         </button>
                     </div>
                 </article>
-                <article class="card background-color-gradient-5to4 background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                <article id="card" class="card background-color-gradient-2tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
                     <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
                     <div class="card-body font-color-dark">
                         <h2>titre</h2>
                         <p>Bonjour ça va</p>
-                        <button class="btn background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-5tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
                             Voir
                         </button>
                     </div>
                 </article>
-                <article class="card background-color-gradient-5to4 background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                <article id="card" class="card background-color-gradient-2tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
                     <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
                     <div class="card-body font-color-dark">
                         <h2>titre</h2>
                         <p>Bonjour ça va</p>
-                        <button class="btn background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-5tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
                             Voir
                         </button>
                     </div>
                 </article>
-            </section>
-        </div>
+            </div>
+        </section>
+        <section id="projects" class="section section-pos pres-missions">
+            <h2 class="font-color-dark">Mes projets réalisés</h2>
+            <div class="pres-missions-cards">
+                <article id="card" class="card background-color-gradient-5tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                    <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
+                    <div class="card-body font-color-dark">
+                        <h2>titre</h2>
+                        <p>Bonjour ça va</p>
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-2tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                            Voir
+                        </button>
+                    </div>
+                </article>
+                <article id="card" class="card background-color-gradient-5tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                    <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
+                    <div class="card-body font-color-dark">
+                        <h2>titre</h2>
+                        <p>Bonjour ça va</p>
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-2tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                            Voir
+                        </button>
+                    </div>
+                </article>
+                <article id="card" class="card background-color-gradient-5tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                    <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
+                    <div class="card-body font-color-dark">
+                        <h2>titre</h2>
+                        <p>Bonjour ça va</p>
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-2tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                            Voir
+                        </button>
+                    </div>
+                </article>
+                <article id="card" class="card background-color-gradient-5tolight background-color-gradient-size-200 background-color-gradient-hover anim-trans scale box-shadow-m box-shadow-l-hover">
+                    <img class="card-img" src="img/missions/logo.png" alt="illustration mission logo">
+                    <div class="card-body font-color-dark">
+                        <h2>titre</h2>
+                        <p>Bonjour ça va</p>
+                        <button class="btn background-color-gradient-size-200 background-color-gradient-2tolight background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                            Voir
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="contacts" class="contacts background-color-gradient-5tolight">
+            <div class="contact-form background-color-dark font-color-light box-shadow-m">
+                <h1 class="text-align-center">Contactez-moi</h1>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" class="focus-form" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" class="focus-form" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Votre message..." class="focus-form" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-form align-self-left background-color-gradient-size-200 background-color-gradient-2to4 background-color-gradient-hover anim-trans scale scale-clic color-clic focus box-shadow-s-hover">
+                        Envoyer
+                    </button>
+                </form>
+            </div>
+            <div class="contact-socials">
+                <h2>Mes réseaux sociaux</h2>
+                <div class="socials">
+                    <img class="scale anim-trans" src="socials/insta.svg">
+                    <img class="scale anim-trans" src="socials/dribbble.svg">
+                    <img class="scale anim-trans" src="socials/linkedin.svg">
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <p>© 2025 - Parazo! Tous droits réservés.</p>
