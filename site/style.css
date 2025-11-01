@@ -169,6 +169,9 @@ Pour aller au CSS mobile, ctrl + f --> tapez "CSS mobile"
 .background-color-gradient-lightto2 {
     background-image: linear-gradient(45deg, var(--color-light), var(--color-2));
 }
+.background-color-gradient-darkto1 {
+    background-image: linear-gradient(45deg, var(--color-dark), var(--color-1));
+}
 .background-color-gradient-1to5todark {
     background: radial-gradient(circle at bottom right, var(--color-1), transparent 70%),
                 radial-gradient(circle at bottom left, var(--color-5), transparent 70%),
@@ -217,7 +220,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h3 {
@@ -226,6 +229,7 @@ h3 {
 
 p, a, form, input {
     font-size: 1.8rem;
+    color: var(--color-dark);
 }
 
 a {
@@ -274,7 +278,8 @@ section {
                 box-shadow 0.3s ease,
                 translate 0.3s ease,
                 transform 0.7s ease,
-                background-color 0.3s ease;
+                background-color 0.3s ease,
+                opacity 0.7s ease;
 }
 
 .scale:hover {
@@ -329,6 +334,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    align-self: stretch;
 }
 
 .card-img {
@@ -345,9 +351,18 @@ section {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
+.anim-scroll-card {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.anim-scroll-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /*
     | FIN CSS base
@@ -362,6 +377,7 @@ section {
     border-radius: var(--border-radius-s);
     width: auto;
     cursor: pointer;
+    align-self: start;
 }
 
 /* CSS desktop */
