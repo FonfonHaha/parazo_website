@@ -298,6 +298,22 @@ section {
     transform-style: preserve-3d;
 }
 
+
+.parallax::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/stars2.svg");
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    transform: translateZ(-1px) scale(2);
+    transform-style: preserve-3d;
+}
+
 .parallax section {
     backdrop-filter: blur(3.5rem);
     transform: translateZ(1);
@@ -475,6 +491,8 @@ nav a:hover {
     color: var(--color-light);
 }
 
+
+/* PRESENTATION SECTION */
 .presentation-content {
     display: flex;
     flex-direction: row-reverse;
@@ -484,14 +502,19 @@ nav a:hover {
 }
 
 .presentation-content-logo img {
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
 }
 
 .presentation-content-text {
     display: flex;
     flex-direction: column;
+    color: var(--color-light);
     gap: var(--gap-m);
+}
+
+.presentation-content-text p {
+    color: var(--color-light);
 }
 
 .presentation-content-buttons {
@@ -499,6 +522,12 @@ nav a:hover {
     flex-direction: row;
     gap: var(--gap-m);
 }
+
+.localisation-tags {
+    font-size: 2em;
+}
+
+/* MISSIONS SECTION */
 
 .pres-missions {
     display: flex;
