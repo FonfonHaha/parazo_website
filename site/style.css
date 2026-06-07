@@ -254,6 +254,7 @@ main {
 }
 
 section {
+    box-sizing: border-box;
     width: 70%;
     padding: 5rem;
     border-radius: var(--border-radius-l);
@@ -279,19 +280,29 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-l);
+    row-gap: var(--gap-l);
     position: relative;
-    overflow-y: hidden;
     perspective: 1px;
+    border-radius: 0%;
+    overflow-y: auto;
+}
+
+.parallax .title {
+    position: relative;
 }
 
 .parallax .stars {
     position: absolute;
-    width: 90%;
+    width: 100%;
+    transform: translateZ(-1px) scale(2);
+    transform-style: preserve-3d;
 }
 
 .parallax section {
-    
+    backdrop-filter: blur(3.5rem);
+    transform: translateZ(1);
+    transform-style: preserve-3d;
+    z-index: 1;
 }
 
 /*HOVER ACTIVE FOCUS*/
