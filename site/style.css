@@ -282,7 +282,6 @@ section {
     align-items: center;
     row-gap: var(--gap-l);
     position: relative;
-    perspective: 1px;
     border-radius: 0%;
     overflow-y: auto;
 }
@@ -310,7 +309,7 @@ section {
     background-position: center;
 
     width: 100%;
-    transform: translateZ(-1px) scale(2);
+    /* transform: translateZ(-1px) scale(2); */
     transform-style: preserve-3d;
 }
 
@@ -556,6 +555,9 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     gap: var(--gap-l);
+}
+.contacts h2 {
+    font-size: 5rem;
 }
 
 /* FORMULAIRE */
