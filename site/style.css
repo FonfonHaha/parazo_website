@@ -284,6 +284,7 @@ section {
     position: relative;
     border-radius: 0%;
     overflow-y: auto;
+    /*perspective: 1px;*/
 }
 
 .parallax .title {
