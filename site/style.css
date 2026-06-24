@@ -544,8 +544,9 @@ nav a:hover {
     gap: var(--gap-l);
 }
 
-.pres-missions #card {
+.pres-missions .card {
     flex: 1 1 calc(25% - var(--gap-l));
+    max-width: calc(25% - var(--gap-l));
 }
 
 /* CONTACTS */
@@ -670,13 +671,64 @@ textarea {
     opacity: 1;
 }
 
-/*CSS mobile */
+/* CSS responsive*/
+
+@media screen and (max-width: 1260px) {
+    .pres-missions .card {
+        flex: 1 1 calc(50% - var(--gap-l));
+        max-width: calc(50% - var(--gap-l));
+    }
+}
+
 @media screen and (max-width: 985px) {
+    section {
+        width: 90%;
+        padding: 3rem;
+    }
+
     .presentation-content {
         flex-direction: column;
     }
 
-    .socials {
-        width: 40%;
+    .pres-missions-cards {
+        justify-content: center;
+    }
+
+    .pres-missions .card {
+        flex: 1 1 40%;
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        width: 95%;
+        padding: 2rem;
+        border-radius: 2rem;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    .presentation-content-buttons {
+        flex-direction: column;
+    }
+
+    .pres-missions .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .btn-form {
+        width: 100%;
     }
 }
