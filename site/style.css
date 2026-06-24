@@ -629,6 +629,11 @@ textarea {
     width: 100%;
 }
 
+.socials img {
+    width: clamp(3rem, 30%, 20rem);
+    height: auto;
+}
+
 /* CSS SLIDER */
 .slider-container {
     position: relative;
@@ -726,6 +731,7 @@ textarea {
 
     .contact-form {
         width: 100%;
+        padding: var(--gap-s);
     }
 
     .btn-form {
